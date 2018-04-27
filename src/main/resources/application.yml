@@ -1,0 +1,25 @@
+---
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+        git:
+          uri: https://github.com/benhallouk/text2system-config-store
+          search-paths:
+            - 'text2system*'
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
+management:
+  endpoint:
+    health:
+      roles: ADMIN
+      show-details: when_authorized
